@@ -1,0 +1,214 @@
+@use "../../../styles/variables" as vars;
+@use "../../../styles/mixins" as mixins;
+
+.header {
+  width: 100%;
+  background: vars.$color-surface;
+  border-bottom: 1px solid vars.$color-border;
+}
+
+.container {
+  @include mixins.container;
+}
+
+.topBar {
+  background: vars.$color-primary;
+  color: #fff;
+  font-size: 0.8rem;
+
+  .container {
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.catalogBadge {
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.mainHeader {
+  .container {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logoMark {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: vars.$color-primary;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+
+  strong {
+    font-size: 1.15rem;
+    line-height: 1.1;
+  }
+
+  small {
+    margin-top: 3px;
+    color: vars.$color-text-muted;
+    font-size: 0.7rem;
+  }
+}
+
+.shopSwitch {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  margin-left: auto;
+  background: vars.$color-background;
+  border: 1px solid vars.$color-border;
+  border-radius: 999px;
+
+  button {
+    @include mixins.button-reset;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 16px;
+    border-radius: 999px;
+    color: vars.$color-text-muted;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition:
+      background vars.$transition-default,
+      color vars.$transition-default;
+
+    &:hover {
+      color: vars.$color-primary;
+    }
+  }
+
+  .active {
+    background: vars.$color-primary;
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color vars.$transition-default;
+
+    &:hover {
+      color: vars.$color-primary;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .mainHeader {
+    .container {
+      min-height: auto;
+      padding-block: 14px;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+  }
+
+  .shopSwitch {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+
+    button {
+      flex: 1;
+      justify-content: center;
+    }
+  }
+
+  .navigation {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .topBar {
+    .container {
+      min-height: 32px;
+      justify-content: center;
+    }
+
+    p {
+      display: none;
+    }
+  }
+
+  .catalogBadge {
+    font-size: 0.68rem;
+  }
+
+  .logoMark {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logoText {
+    strong {
+      font-size: 1rem;
+    }
+
+    small {
+      display: none;
+    }
+  }
+
+  .navigation {
+    gap: 12px;
+
+    a {
+      font-size: 0.78rem;
+    }
+
+    a:nth-child(2) {
+      display: none;
+    }
+  }
+
+  .shopSwitch {
+    button {
+      padding: 9px 10px;
+      font-size: 0.8rem;
+    }
+  }
+}

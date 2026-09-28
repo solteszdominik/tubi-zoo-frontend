@@ -1,0 +1,146 @@
+@use "../../../styles/variables" as vars;
+
+.card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: vars.$color-surface;
+  border: 1px solid vars.$color-border;
+  border-radius: vars.$border-radius-lg;
+  transition:
+    transform vars.$transition-default,
+    box-shadow vars.$transition-default;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 35px rgba(21, 38, 64, 0.08);
+  }
+}
+
+.imageWrapper {
+  aspect-ratio: 1 / 0.78;
+  overflow: hidden;
+  display: block;
+  background: vars.$color-background;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 18px;
+  }
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  span {
+    font-size: 3rem;
+  }
+
+  small {
+    color: vars.$color-text-muted;
+    font-size: 0.72rem;
+  }
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+}
+
+.category {
+  margin-bottom: 7px;
+  color: vars.$color-text-muted;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.name {
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.35;
+    transition: color vars.$transition-default;
+  }
+
+  &:hover h3 {
+    color: vars.$color-primary;
+  }
+}
+
+.packageSize {
+  margin-top: 8px;
+  color: vars.$color-text-muted;
+  font-size: 0.78rem;
+}
+
+.bottom {
+  margin-top: auto;
+  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.price {
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+
+.detailsButton,
+.cartButton {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 14px;
+  border-radius: vars.$border-radius-sm;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.detailsButton {
+  border: 1px solid vars.$color-primary;
+  color: vars.$color-primary;
+  transition:
+    background vars.$transition-default,
+    color vars.$transition-default;
+
+  &:hover {
+    background: vars.$color-primary;
+    color: #fff;
+  }
+}
+
+.cartButton {
+  border: 0;
+  background: vars.$color-primary;
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 14px;
+  }
+
+  .bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .detailsButton,
+  .cartButton {
+    width: 100%;
+  }
+}

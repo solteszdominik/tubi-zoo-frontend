@@ -1,0 +1,15 @@
+@use "./variables" as vars;
+
+@mixin container {
+  width: min(100% - 32px, vars.$container-width);
+  margin-inline: auto;
+}
+
+@mixin button-reset {
+  border: 0;
+  padding: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
