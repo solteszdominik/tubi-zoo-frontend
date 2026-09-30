@@ -2,9 +2,11 @@
 @use "../../../styles/mixins" as mixins;
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   width: 100%;
-  background: vars.$color-surface;
-  border-bottom: 1px solid vars.$color-border;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
 }
 
 .container {
@@ -12,12 +14,11 @@
 }
 
 .topBar {
-  background: vars.$color-primary;
+  background: vars.$color-primary-dark;
   color: #fff;
-  font-size: 0.8rem;
 
   .container {
-    min-height: 36px;
+    min-height: 34px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,43 +27,50 @@
 
   p {
     margin: 0;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.75);
   }
 }
 
 .catalogBadge {
-  padding: 4px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 4px 9px;
   border-radius: 999px;
-  font-size: 0.72rem;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 0.68rem;
+  font-weight: 700;
   white-space: nowrap;
 }
 
 .mainHeader {
+  position: relative;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
   .container {
-    min-height: 88px;
+    min-height: 76px;
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 28px;
   }
 }
 
 .logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
   flex-shrink: 0;
 }
 
 .logoMark {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
-  border-radius: 50%;
+  border-radius: 12px;
   background: vars.$color-primary;
   color: #fff;
-  font-weight: 800;
-  font-size: 0.9rem;
+  font-weight: 900;
 }
 
 .logoText {
@@ -70,12 +78,12 @@
   flex-direction: column;
 
   strong {
-    font-size: 1.15rem;
-    line-height: 1.1;
+    font-size: 1.05rem;
+    line-height: 1.2;
   }
 
   small {
-    margin-top: 3px;
+    margin-top: 2px;
     color: vars.$color-text-muted;
     font-size: 0.7rem;
   }
@@ -84,50 +92,54 @@
 .shopSwitch {
   display: flex;
   align-items: center;
+  gap: 4px;
   padding: 4px;
   margin-left: auto;
-  background: vars.$color-background;
   border: 1px solid vars.$color-border;
   border-radius: 999px;
+  background: vars.$color-background;
 
   button {
-    @include mixins.button-reset;
-
-    display: flex;
+    min-height: 38px;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 7px;
-    padding: 9px 16px;
+    padding: 0 14px;
+    border: 0;
     border-radius: 999px;
+    background: transparent;
     color: vars.$color-text-muted;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.78rem;
+    font-weight: 700;
     transition:
       background vars.$transition-default,
-      color vars.$transition-default;
+      color vars.$transition-default,
+      box-shadow vars.$transition-default;
 
     &:hover {
-      color: vars.$color-primary;
+      color: vars.$color-text;
     }
   }
 
   .active {
-    background: vars.$color-primary;
-    color: #fff;
-
-    &:hover {
-      color: #fff;
-    }
+    background: vars.$color-surface;
+    color: vars.$color-primary;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
 }
 
 .navigation {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 26px;
 
   a {
-    font-size: 0.9rem;
-    font-weight: 600;
+    position: relative;
+    padding-block: 8px;
+    color: vars.$color-text;
+    font-size: 0.85rem;
+    font-weight: 700;
     transition: color vars.$transition-default;
 
     &:hover {
@@ -136,36 +148,108 @@
   }
 }
 
+.menuButton {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  border: 1px solid vars.$color-border;
+  border-radius: 10px;
+  background: vars.$color-surface;
+
+  span {
+    width: 100%;
+    height: 2px;
+    display: block;
+    border-radius: 999px;
+    background: vars.$color-text;
+    transition:
+      transform vars.$transition-default,
+      opacity vars.$transition-default;
+
+    & + span {
+      margin-top: 5px;
+    }
+  }
+}
+
+.menuButtonOpen {
+  span {
+    &:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
 @media (max-width: 900px) {
   .mainHeader {
     .container {
-      min-height: auto;
-      padding-block: 14px;
-      flex-wrap: wrap;
-      gap: 14px;
+      min-height: 70px;
+      gap: 16px;
     }
   }
 
   .shopSwitch {
-    order: 3;
-    width: 100%;
-    margin-left: 0;
+    margin-left: auto;
+  }
 
-    button {
-      flex: 1;
-      justify-content: center;
-    }
+  .menuButton {
+    display: block;
+    flex-shrink: 0;
   }
 
   .navigation {
-    margin-left: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    border-top: 1px solid transparent;
+    background: vars.$color-surface;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    transition:
+      max-height 0.25s ease,
+      opacity vars.$transition-default,
+      visibility vars.$transition-default;
+
+    a {
+      width: min(100% - 32px, vars.$container-width);
+      margin-inline: auto;
+      padding-block: 16px;
+      border-bottom: 1px solid vars.$color-border;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .navigationOpen {
+    max-height: 240px;
+    visibility: visible;
+    opacity: 1;
+    border-top-color: vars.$color-border;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .topBar {
     .container {
-      min-height: 32px;
       justify-content: center;
     }
 
@@ -174,8 +258,11 @@
     }
   }
 
-  .catalogBadge {
-    font-size: 0.68rem;
+  .mainHeader {
+    .container {
+      min-height: 66px;
+      gap: 10px;
+    }
   }
 
   .logoMark {
@@ -184,31 +271,59 @@
   }
 
   .logoText {
-    strong {
-      font-size: 1rem;
-    }
-
     small {
       display: none;
     }
   }
 
-  .navigation {
-    gap: 12px;
+  .shopSwitch {
+    gap: 2px;
+    padding: 3px;
 
-    a {
-      font-size: 0.78rem;
+    button {
+      min-height: 36px;
+      gap: 5px;
+      padding-inline: 10px;
     }
+  }
+}
 
-    a:nth-child(2) {
-      display: none;
-    }
+@media (max-width: 480px) {
+  .topBar {
+    display: none;
+  }
+
+  .logoText {
+    display: none;
   }
 
   .shopSwitch {
+    flex: 1;
+    justify-content: center;
+
     button {
-      padding: 9px 10px;
-      font-size: 0.8rem;
+      flex: 1;
+      padding-inline: 8px;
+    }
+  }
+
+  .menuButton {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 370px) {
+  .switchLabel {
+    display: none;
+  }
+
+  .shopSwitch {
+    flex: initial;
+
+    button {
+      width: 42px;
+      flex: initial;
     }
   }
 }

@@ -1,0 +1,177 @@
+@use "../../styles/variables" as vars;
+@use "../../styles/mixins" as mixins;
+
+.section {
+  padding-block: 80px 100px;
+}
+
+.container {
+  @include mixins.container;
+}
+
+.heading {
+  max-width: 680px;
+  margin-bottom: 48px;
+
+  h1 {
+    margin: 10px 0 18px;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  p {
+    margin: 0;
+    color: vars.$color-text-muted;
+    line-height: 1.7;
+  }
+}
+
+.eyebrow {
+  color: vars.$color-primary;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.75fr) minmax(0, 1.25fr);
+  gap: 32px;
+  align-items: stretch;
+}
+
+.information {
+  display: grid;
+  gap: 14px;
+}
+
+.card,
+.hoursCard {
+  border: 1px solid vars.$color-border;
+  border-radius: vars.$border-radius-md;
+  background: vars.$color-surface;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+
+  h2 {
+    margin: 0 0 5px;
+    font-size: 0.9rem;
+  }
+
+  p,
+  a {
+    margin: 0;
+    color: vars.$color-text-muted;
+    line-height: 1.5;
+  }
+
+  a {
+    transition: color vars.$transition-default;
+
+    &:hover {
+      color: vars.$color-primary;
+    }
+  }
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: vars.$color-background;
+  font-size: 1.15rem;
+}
+
+.hoursCard {
+  padding: 24px;
+
+  h2 {
+    margin: 0 0 20px;
+    font-size: 1rem;
+  }
+}
+
+.hours {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  span {
+    color: vars.$color-text-muted;
+  }
+
+  strong {
+    white-space: nowrap;
+    font-size: 0.9rem;
+  }
+}
+
+.map {
+  min-height: 520px;
+  overflow: hidden;
+  border: 1px solid vars.$color-border;
+  border-radius: vars.$border-radius-lg;
+  background: vars.$color-surface;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    display: block;
+    border: 0;
+  }
+}
+
+@media (max-width: 850px) {
+  .section {
+    padding-block: 64px 80px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map,
+  .map iframe {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 520px) {
+  .section {
+    padding-block: 48px 64px;
+  }
+
+  .heading {
+    margin-bottom: 32px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .hoursCard {
+    padding: 20px;
+  }
+
+  .map,
+  .map iframe {
+    min-height: 340px;
+  }
+}

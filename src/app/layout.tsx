@@ -6,6 +6,7 @@ import { ShopProvider } from "@/context/ShopContext";
 import type { ShopMode } from "@/types/shop";
 
 import "./globals.scss";
+import Footer from "@/components/layout/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Tubi-Zoo",
@@ -30,6 +31,8 @@ export default async function RootLayout({
           <Header />
 
           <main>{children}</main>
+
+          <Footer />
         </ShopProvider>
       </body>
     </html>

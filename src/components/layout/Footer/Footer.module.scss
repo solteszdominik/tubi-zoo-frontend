@@ -1,0 +1,171 @@
+@use "../../../styles/variables" as vars;
+@use "../../../styles/mixins" as mixins;
+
+.footer {
+  padding: 70px 0 24px;
+  background: vars.$color-primary-dark;
+  color: #fff;
+}
+
+.container {
+  @include mixins.container;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1.4fr 0.7fr 1fr 1.2fr;
+  gap: 50px;
+  padding-bottom: 50px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoMark {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #fff;
+  color: vars.$color-primary;
+  font-weight: 900;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+
+  strong {
+    font-size: 1.15rem;
+  }
+
+  small {
+    margin-top: 2px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.brand {
+  p {
+    max-width: 330px;
+    margin: 22px 0 0;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.7;
+  }
+}
+
+.column {
+  h3 {
+    margin: 0 0 20px;
+    font-size: 0.9rem;
+  }
+
+  nav,
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  a,
+  p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.5;
+  }
+
+  a {
+    transition: color vars.$transition-default;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.hours {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  span {
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  strong {
+    white-space: nowrap;
+    font-size: 0.85rem;
+  }
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+  p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.8rem;
+  }
+}
+
+.legal {
+  display: flex;
+  gap: 24px;
+
+  a {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.8rem;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding-top: 52px;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .legal {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hours {
+    max-width: 320px;
+  }
+}

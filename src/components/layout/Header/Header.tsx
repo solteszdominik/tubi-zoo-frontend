@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -15,18 +16,25 @@ export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const handleShopChange = (mode: ShopMode) => {
     if (mode === shopMode) {
       return;
     }
 
     setShopMode(mode);
+    setMobileMenuOpen(false);
 
     const isProductDetailPage = pathname.startsWith("/termekek/");
 
     if (isProductDetailPage) {
       router.push("/termekek");
     }
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -43,7 +51,7 @@ export default function Header() {
 
       <div className={styles.mainHeader}>
         <div className={styles.container}>
-          <Link href="/" className={styles.logo}>
+          <Link href="/" className={styles.logo} onClick={closeMobileMenu}>
             <span className={styles.logoMark}>TZ</span>
 
             <span className={styles.logoText}>
@@ -64,7 +72,7 @@ export default function Header() {
               aria-pressed={shopMode === "fishing"}
             >
               <span aria-hidden="true">🎣</span>
-              Horgászat
+              <span className={styles.switchLabel}>Horgászat</span>
             </button>
 
             <button
@@ -74,14 +82,43 @@ export default function Header() {
               aria-pressed={shopMode === "pet"}
             >
               <span aria-hidden="true">🐾</span>
-              Állateledel
+              <span className={styles.switchLabel}>Állateledel</span>
             </button>
           </div>
 
-          <nav className={styles.navigation} aria-label="Fő navigáció">
-            <Link href="/">Főoldal</Link>
-            <Link href="/termekek">Termékek</Link>
-            <Link href="/kapcsolat">Kapcsolat</Link>
+          <button
+            type="button"
+            className={`${styles.menuButton} ${
+              mobileMenuOpen ? styles.menuButtonOpen : ""
+            }`}
+            onClick={() => setMobileMenuOpen((current) => !current)}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="main-navigation"
+            aria-label={mobileMenuOpen ? "Menü bezárása" : "Menü megnyitása"}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+
+          <nav
+            id="main-navigation"
+            className={`${styles.navigation} ${
+              mobileMenuOpen ? styles.navigationOpen : ""
+            }`}
+            aria-label="Fő navigáció"
+          >
+            <Link href="/" onClick={closeMobileMenu}>
+              Főoldal
+            </Link>
+
+            <Link href="/termekek" onClick={closeMobileMenu}>
+              Termékek
+            </Link>
+
+            <Link href="/kapcsolat" onClick={closeMobileMenu}>
+              Kapcsolat
+            </Link>
           </nav>
         </div>
       </div>
