@@ -13,13 +13,27 @@ const ShopContext = createContext<ShopContextType | undefined>(undefined);
 
 type ShopProviderProps = {
   children: ReactNode;
+  initialShopMode: ShopMode;
 };
 
-export function ShopProvider({ children }: ShopProviderProps) {
-  const [shopMode, setShopMode] = useState<ShopMode>("fishing");
+const COOKIE_NAME = "tubi-zoo-shop-mode";
+
+export function ShopProvider({ children, initialShopMode }: ShopProviderProps) {
+  const [shopMode, setShopModeState] = useState<ShopMode>(initialShopMode);
+
+  const setShopMode = (mode: ShopMode) => {
+    setShopModeState(mode);
+
+    document.cookie = `${COOKIE_NAME}=${mode}; path=/; max-age=31536000; samesite=lax`;
+  };
 
   return (
-    <ShopContext.Provider value={{ shopMode, setShopMode }}>
+    <ShopContext.Provider
+      value={{
+        shopMode,
+        setShopMode,
+      }}
+    >
       {children}
     </ShopContext.Provider>
   );

@@ -1,0 +1,252 @@
+@use "../../../styles/variables" as vars;
+@use "../../../styles/mixins" as mixins;
+
+.section {
+  padding-block: 32px 90px;
+  background: vars.$color-background;
+}
+
+.container {
+  @include mixins.container;
+}
+
+.breadcrumb {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  color: vars.$color-text-muted;
+  font-size: 0.78rem;
+
+  a {
+    transition: color vars.$transition-default;
+
+    &:hover {
+      color: vars.$color-primary;
+    }
+  }
+
+  > span:last-child {
+    color: vars.$color-text;
+  }
+}
+
+.product {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(350px, 0.85fr);
+  gap: 64px;
+  padding: 40px;
+  background: vars.$color-surface;
+  border: 1px solid vars.$color-border;
+  border-radius: vars.$border-radius-lg;
+}
+
+.imageWrapper {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: vars.$color-background;
+  border-radius: vars.$border-radius-md;
+
+  img {
+    width: 100%;
+    height: 100%;
+    padding: 32px;
+    object-fit: contain;
+  }
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  span {
+    font-size: clamp(4rem, 10vw, 7rem);
+  }
+
+  small {
+    color: vars.$color-text-muted;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    margin: 10px 0 16px;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+}
+
+.category {
+  color: vars.$color-primary;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.shortDescription {
+  margin: 0 0 28px;
+  color: vars.$color-text-muted;
+  line-height: 1.7;
+}
+
+.detailRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 14px;
+  border-top: 1px solid vars.$color-border;
+  border-bottom: 1px solid vars.$color-border;
+  font-size: 0.88rem;
+
+  span {
+    color: vars.$color-text-muted;
+  }
+}
+
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.availableDot,
+.unavailableDot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.availableDot {
+  background: #27864b;
+}
+
+.unavailableDot {
+  background: #b42318;
+}
+
+.price {
+  margin-top: 18px;
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+  font-weight: 800;
+}
+
+.purchase {
+  margin-top: 24px;
+
+  button {
+    width: 100%;
+    min-height: 50px;
+    border: 0;
+    border-radius: vars.$border-radius-sm;
+    background: vars.$color-primary;
+    color: #fff;
+    font-weight: 700;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.45;
+    }
+  }
+}
+
+.catalogNotice {
+  margin-top: 24px;
+  padding: 16px;
+  background: vars.$color-background;
+  border: 1px solid vars.$color-border;
+  border-radius: vars.$border-radius-sm;
+
+  strong {
+    font-size: 0.85rem;
+  }
+
+  p {
+    margin: 6px 0 0;
+    color: vars.$color-text-muted;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+}
+
+.description {
+  max-width: 850px;
+  margin-top: 56px;
+
+  h2 {
+    margin: 0 0 16px;
+    font-size: 1.6rem;
+  }
+
+  p {
+    margin: 0;
+    color: vars.$color-text-muted;
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 850px) {
+  .product {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding: 28px;
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding-block: 24px 64px;
+  }
+
+  .product {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .imageWrapper {
+    max-height: 440px;
+  }
+
+  .info {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .description {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product {
+    gap: 24px;
+    padding: 14px;
+  }
+
+  .breadcrumb {
+    margin-bottom: 16px;
+  }
+
+  .imageWrapper {
+    img {
+      padding: 20px;
+    }
+  }
+}

@@ -6,9 +6,14 @@ export type Product = {
   slug: string;
   shopMode: ShopMode;
   category: string;
+
   price: number;
   imageUrl: string;
   packageSize?: string;
+
+  shortDescription: string;
+  description: string;
+
   isAvailable: boolean;
   isFeatured: boolean;
 };

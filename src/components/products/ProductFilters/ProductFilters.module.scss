@@ -1,0 +1,62 @@
+@use "../../../styles/variables" as vars;
+
+.filters {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) 220px 220px;
+  gap: 14px;
+  padding: 18px;
+  background: vars.$color-surface;
+  border: 1px solid vars.$color-border;
+  border-radius: vars.$border-radius-md;
+}
+
+.search,
+.selectGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  label {
+    color: vars.$color-text-muted;
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  input,
+  select {
+    width: 100%;
+    height: 44px;
+    padding-inline: 13px;
+    border: 1px solid vars.$color-border;
+    border-radius: vars.$border-radius-sm;
+    outline: none;
+    background: vars.$color-surface;
+    color: vars.$color-text;
+    transition: border-color vars.$transition-default;
+
+    &:focus {
+      border-color: vars.$color-primary;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .filters {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .search {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .filters {
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .search {
+    grid-column: auto;
+  }
+}
