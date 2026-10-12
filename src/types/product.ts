@@ -4,10 +4,15 @@ export type Product = {
   id: string;
   name: string;
   slug: string;
+
   shopMode: ShopMode;
   category: string;
 
+  brand?: string;
+
   price: number;
+  unitPrice?: string;
+
   imageUrl: string;
   packageSize?: string;
 
