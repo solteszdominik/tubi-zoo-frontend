@@ -4,21 +4,13 @@ export type Product = {
   id: string;
   name: string;
   slug: string;
-
   shopMode: ShopMode;
   category: string;
-
-  brand?: string;
-
-  price: number;
-  unitPrice?: string;
-
+  price: number | null;
   imageUrl: string;
-  packageSize?: string;
-
+  packageSize?: string | null;
   shortDescription: string;
   description: string;
-
   isAvailable: boolean;
   isFeatured: boolean;
 };
