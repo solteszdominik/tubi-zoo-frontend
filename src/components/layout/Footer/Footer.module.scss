@@ -169,3 +169,14 @@
     max-width: 320px;
   }
 }
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  p {
+    margin: 0;
+    line-height: 1.6;
+  }
+}

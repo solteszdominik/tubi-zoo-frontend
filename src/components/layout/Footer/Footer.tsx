@@ -31,6 +31,8 @@ export default function Footer() {
 
             <nav>
               <Link href="/">Főoldal</Link>
+              <Link href="/allateledel">Állateledel</Link>
+              <Link href="/horgaszat">Horgászat</Link>
               <Link href="/termekek">Termékek</Link>
               <Link href="/kapcsolat">Kapcsolat</Link>
             </nav>
@@ -79,9 +81,16 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p>
-            © {currentYear} {siteConfig.name}. Minden jog fenntartva.
-          </p>
+          <div className={styles.copyright}>
+            <p>
+              © {currentYear} {siteConfig.name}. Minden jog fenntartva.
+            </p>
+
+            <p>
+              Üzemeltető: {siteConfig.company.name} · Adószám:{" "}
+              {siteConfig.company.taxNumber}
+            </p>
+          </div>
 
           <div className={styles.legal}>
             <Link href="/adatkezeles">Adatkezelési tájékoztató</Link>

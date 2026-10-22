@@ -84,6 +84,33 @@ export default function ContactPage() {
             />
           </div>
         </div>
+
+        <div className={styles.companySection}>
+          <div className={styles.companyHeading}>
+            <span className={styles.companyEyebrow}>CÉGINFORMÁCIÓK</span>
+
+            <h2>Üzemeltető adatai</h2>
+
+            <p>A Tubi-Zoo üzlet hivatalos üzemeltetőjének adatai.</p>
+          </div>
+
+          <div className={styles.companyGrid}>
+            <div className={styles.companyItem}>
+              <span>Cégnév</span>
+              <strong>{siteConfig.company.name}</strong>
+            </div>
+
+            <div className={styles.companyItem}>
+              <span>Székhely</span>
+              <strong>{siteConfig.company.headquarters}</strong>
+            </div>
+
+            <div className={styles.companyItem}>
+              <span>Adószám</span>
+              <strong>{siteConfig.company.taxNumber}</strong>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
