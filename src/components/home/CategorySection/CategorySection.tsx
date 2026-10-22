@@ -14,7 +14,7 @@ const categoryImages: Record<string, string> = {
   zsinorok: "/images/hero/fishing-line.webp",
   horgok: "/images/hero/hooks.webp",
   csalik: "/images/hero/mucsali.webp",
-  etetoanyagok: "/images/hero/etetokosar.webp",
+  etetőanyagok: "/images/hero/etetokosar.webp",
   horgasztaskak: "/images/hero/tackles.webp",
   "horgasz-kiegeszitok": "/images/hero/tackles.webp",
 
@@ -65,7 +65,7 @@ export default function CategorySection() {
             return (
               <Link
                 key={category.id}
-                href={`/termekek?category=${category.slug}`}
+                href={`/termekek?shop=${shopMode}&category=${category.slug}`}
                 className={styles.card}
                 aria-label={`${category.name} termékek megtekintése`}
               >

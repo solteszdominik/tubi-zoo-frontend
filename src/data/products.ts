@@ -2201,8 +2201,8 @@ export const products: Product[] = [
   },
   {
     id: "fish-008",
-    name: "Odadó bojli – fűszeres változat",
-    slug: "odado-bojli-fuszeres-valtozat",
+    name: "Oldódó bojli – fűszeres változat",
+    slug: "oldodo-bojli-fuszeres-valtozat",
     shopMode: "fishing",
     category: "bojlik",
     shortDescription:
@@ -2217,8 +2217,8 @@ export const products: Product[] = [
   },
   {
     id: "fish-009",
-    name: "Odadó bojli – krémes kukorica",
-    slug: "odado-bojli-kremes-kukorica",
+    name: "Oldódó bojli – krémes kukorica",
+    slug: "oldodo-bojli-kremes-kukorica",
     shopMode: "fishing",
     category: "bojlik",
     shortDescription: "Krémes kukorica változatú bojli horgászathoz.",
@@ -2232,10 +2232,10 @@ export const products: Product[] = [
   },
   {
     id: "fish-010",
-    name: "Odadó vegyes bojli / etetőcsali",
-    slug: "odado-vegyes-bojli-es-etetocsali",
+    name: "Főtt tigrismogyoró",
+    slug: "fott-tigrismogyoro",
     shopMode: "fishing",
-    category: "bojlik",
+    category: "etetoanyagok",
     shortDescription:
       "Vegyes színű és méretű szemcsés csali. A pontos terméknév ellenőrizendő.",
     description:
@@ -2248,8 +2248,8 @@ export const products: Product[] = [
   },
   {
     id: "fish-011",
-    name: "Odadó oldódó bojli – tejsavas ananász",
-    slug: "odado-oldodo-bojli-tejsavas-ananasz",
+    name: "Oldódó oldódó bojli – tejsavas ananász",
+    slug: "oldodo-oldodo-bojli-tejsavas-ananasz",
     shopMode: "fishing",
     category: "bojlik",
     shortDescription: "Oldódó bojli, tejsavas-ananászos változatban.",
@@ -2309,8 +2309,8 @@ export const products: Product[] = [
   },
   {
     id: "fish-015",
-    name: "Odadó etetőanyag – édes ananász",
-    slug: "odado-etetoanyag-edes-ananasz",
+    name: "Oldódó etetőanyag – édes ananász",
+    slug: "oldodo-etetoanyag-edes-ananasz",
     shopMode: "fishing",
     category: "etetőanyagok",
     shortDescription: "Édes ananász ízesítésű etetőanyag.",
@@ -2324,8 +2324,8 @@ export const products: Product[] = [
   },
   {
     id: "fish-016",
-    name: "Odadó etetőanyag – joghurt eper",
-    slug: "odado-etetoanyag-joghurt-eper",
+    name: "Oldódó etetőanyag – joghurt eper",
+    slug: "oldodo-etetoanyag-joghurt-eper",
     shopMode: "fishing",
     category: "etetőanyagok",
     shortDescription: "Joghurtos-epres változatú etetőanyag.",
@@ -2417,22 +2417,7 @@ export const products: Product[] = [
     isAvailable: true,
     isFeatured: false,
   },
-  {
-    id: "fish-022",
-    name: "Bojlik – termékcsalád bemutató",
-    slug: "bojlik-termekcsalad-bemutato",
-    shopMode: "fishing",
-    category: "bojlik",
-    shortDescription:
-      "Többféle bojlit bemutató termékcsalád-kép; nem feltétlenül önálló árucikk.",
-    description:
-      "Többféle bojlit bemutató termékcsalád-kép; nem feltétlenül önálló árucikk. A felhasználás előtt ellenőrizd a csomagoláson szereplő gyártói útmutatót.",
-    packageSize: null,
-    price: null,
-    imageUrl: "/images/fishing/fish-022.webp",
-    isAvailable: true,
-    isFeatured: false,
-  },
+
   {
     id: "fish-023",
     name: "Aqua Classic – pellet A",

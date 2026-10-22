@@ -1,70 +1,109 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+
 import { useShop } from "@/context/ShopContext";
 import { categories } from "@/data/home";
 import { products } from "@/data/products";
+import type { ShopMode } from "@/types/shop";
+
 import ProductCard from "@/components/common/ProductCard/ProductCard";
 import ProductFilters, {
   type SortOption,
 } from "@/components/products/ProductFilters/ProductFilters";
+
 import styles from "./ProductList.module.scss";
 
 export default function ProductList() {
-  const { shopMode } = useShop();
+  const { shopMode, setShopMode } = useShop();
+
   const router = useRouter();
   const searchParams = useSearchParams();
+
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState<SortOption>("default");
-  const activeCategories = categories[shopMode];
+
+  const shopFromUrl = searchParams.get("shop");
+
+  const activeShopMode: ShopMode =
+    shopFromUrl === "pet" || shopFromUrl === "fishing" ? shopFromUrl : shopMode;
+
+  useEffect(() => {
+    if (shopMode !== activeShopMode) {
+      setShopMode(activeShopMode);
+    }
+  }, [shopMode, activeShopMode, setShopMode]);
+
+  const activeCategories = categories[activeShopMode];
+
   const categoryFromUrl = searchParams.get("category");
+
   const isValidCategory = activeCategories.some(
     (category) => category.slug === categoryFromUrl,
   );
+
   const selectedCategory =
     categoryFromUrl && isValidCategory ? categoryFromUrl : "all";
 
   const handleCategoryChange = (category: string) => {
     const params = new URLSearchParams(searchParams.toString());
-    if (category === "all") params.delete("category");
-    else params.set("category", category);
-    const query = params.toString();
-    router.replace(query ? `/termekek?${query}` : "/termekek", {
+
+    params.set("shop", activeShopMode);
+
+    if (category === "all") {
+      params.delete("category");
+    } else {
+      params.set("category", category);
+    }
+
+    router.replace(`/termekek?${params.toString()}`, {
       scroll: false,
     });
   };
 
   const filteredProducts = useMemo(() => {
-    const result = products.filter(
-      (product) =>
-        product.shopMode === shopMode &&
-        (selectedCategory === "all" || product.category === selectedCategory) &&
-        product.name
-          .toLocaleLowerCase("hu")
-          .includes(searchTerm.trim().toLocaleLowerCase("hu")),
-    );
-    return sortBy === "name"
-      ? [...result].sort((a, b) => a.name.localeCompare(b.name, "hu"))
-      : result;
-  }, [shopMode, selectedCategory, searchTerm, sortBy]);
+    const normalizedSearch = searchTerm.trim().toLocaleLowerCase("hu");
+
+    const result = products.filter((product) => {
+      const matchesShop = product.shopMode === activeShopMode;
+
+      const matchesCategory =
+        selectedCategory === "all" || product.category === selectedCategory;
+
+      const matchesSearch = product.name
+        .toLocaleLowerCase("hu")
+        .includes(normalizedSearch);
+
+      return matchesShop && matchesCategory && matchesSearch;
+    });
+
+    if (sortBy === "name") {
+      return [...result].sort((a, b) => a.name.localeCompare(b.name, "hu"));
+    }
+
+    return result;
+  }, [activeShopMode, selectedCategory, searchTerm, sortBy]);
 
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.heading}>
           <span className={styles.eyebrow}>
-            {shopMode === "fishing"
+            {activeShopMode === "fishing"
               ? "Tubi-Zoo Horgászat"
               : "Tubi-Zoo Állateledel"}
           </span>
+
           <h1>Termékek</h1>
+
           <p>
-            {shopMode === "fishing"
+            {activeShopMode === "fishing"
               ? "Böngéssz horgásztermékeink között."
               : "Böngéssz állateledeleink és kiegészítőink között."}
           </p>
         </div>
+
         <ProductFilters
           categories={activeCategories}
           selectedCategory={selectedCategory}
@@ -74,12 +113,14 @@ export default function ProductList() {
           onSearchChange={setSearchTerm}
           onSortChange={setSortBy}
         />
+
         <div className={styles.resultBar}>
           <span>
             <strong>{filteredProducts.length}</strong> termék
           </span>
         </div>
-        {filteredProducts.length ? (
+
+        {filteredProducts.length > 0 ? (
           <div className={styles.grid}>
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
@@ -87,7 +128,7 @@ export default function ProductList() {
           </div>
         ) : (
           <div className={styles.empty}>
-            <span>🔍</span>
+            <span aria-hidden="true">🔍</span>
             <h2>Nincs találat</h2>
             <p>Próbálj más keresést vagy válassz másik kategóriát.</p>
           </div>

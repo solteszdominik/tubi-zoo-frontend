@@ -70,7 +70,7 @@ export const categories: Record<ShopMode, Category[]> = {
     {
       id: "groundbait",
       name: "Etetőanyagok",
-      slug: "etetoanyagok",
+      slug: "etetőanyagok",
       icon: "🌾",
     },
     {
