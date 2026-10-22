@@ -9,15 +9,20 @@ import { categories } from "@/data/home";
 import styles from "./CategorySection.module.scss";
 
 const categoryImages: Record<string, string> = {
+  // Horgászat
   horgaszbotok: "/images/hero/fishing-rod.webp",
   orsok: "/images/hero/fishing-reel.webp",
   zsinorok: "/images/hero/fishing-line.webp",
   horgok: "/images/hero/hooks.webp",
   csalik: "/images/hero/mucsali.webp",
   etetőanyagok: "/images/hero/etetokosar.webp",
+  bojlik: "/images/hero/etetokosar.webp",
+  pelletek: "/images/hero/etetokosar.webp",
+  aromák: "/images/hero/mucsali.webp",
   horgasztaskak: "/images/hero/tackles.webp",
   "horgasz-kiegeszitok": "/images/hero/tackles.webp",
 
+  // Állateledel
   kutya: "/images/hero/dog.webp",
   macska: "/images/hero/cat.webp",
   madarak: "/images/hero/bird.webp",
@@ -53,7 +58,10 @@ export default function CategorySection() {
             </p>
           </div>
 
-          <Link href="/termekek" className={styles.allCategories}>
+          <Link
+            href={`/termekek?shop=${shopMode}`}
+            className={styles.allCategories}
+          >
             Összes termék <span aria-hidden="true">→</span>
           </Link>
         </div>

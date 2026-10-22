@@ -30,7 +30,8 @@
   width: 100%;
   position: relative;
   z-index: 1;
-  padding-block: 90px;
+
+  padding: 90px clamp(24px, 5vw, 90px);
 }
 
 .content {
@@ -198,7 +199,7 @@
   }
 
   .container {
-    padding-block: 90px 55px;
+    padding-block: 90px 20px 55px;
   }
 
   .content {

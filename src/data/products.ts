@@ -15,7 +15,7 @@ export const products: Product[] = [
     shortDescription:
       "Brit Care Cat Pouch kacsafilé 85g – nedves eledel macskák számára.",
     description:
-      "Brit Care Cat Pouch kacsafilé 85g: nedves eledel macskák számára. A termék kiválasztásakor vedd figyelembe az állat életkorát, testméretét és egyéni igényeit. A pontos összetétel, tápérték és napi etetési mennyiség a gyártói csomagoláson ellenőrizhető.",
+      "Brit Care Cat Fillet in Gravy with Hearty Duck egy teljes értékű gabonamentes, szuperprémium nedves macskatáp ízletes húsfilével, homoktövissel és sarkantyúvirággal felnőtt macskáknak.",
     isAvailable: false,
     isFeatured: false,
   },
@@ -75,7 +75,7 @@ export const products: Product[] = [
     category: "macska",
     price: null,
     imageUrl: "/images/products/wolt-005.webp",
-    packageSize: null,
+    packageSize: "85g",
     shortDescription:
       "Brit Care Gravy STERILIZED NYÚL macska nedves eledel – nedves eledel macskák számára.",
     description:
@@ -91,7 +91,7 @@ export const products: Product[] = [
     category: "macska",
     price: null,
     imageUrl: "/images/products/wolt-006.webp",
-    packageSize: null,
+    packageSize: "100g",
     shortDescription:
       "Brit Premium Cat Gravy KITTEN FEHÉR HAL – nedves eledel kölyök macskák számára.",
     description:
@@ -107,7 +107,7 @@ export const products: Product[] = [
     category: "macska",
     price: null,
     imageUrl: "/images/products/wolt-007.webp",
-    packageSize: null,
+    packageSize: "100g",
     shortDescription:
       "Brit Premium macska nedves eledel lazac pisztáng – nedves eledel macskák számára.",
     description:
@@ -123,7 +123,7 @@ export const products: Product[] = [
     category: "macska",
     price: null,
     imageUrl: "/images/products/wolt-008.webp",
-    packageSize: null,
+    packageSize: "100g",
     shortDescription:
       "Brit Premium macska nedves eledel csirke nuggets – nedves eledel macskák számára.",
     description:
@@ -139,7 +139,7 @@ export const products: Product[] = [
     category: "macska",
     price: null,
     imageUrl: "/images/products/wolt-009.webp",
-    packageSize: null,
+    packageSize: "100g",
     shortDescription:
       "Brit Premium macska nedves eledel marha körte – nedves eledel macskák számára.",
     description:
@@ -155,7 +155,7 @@ export const products: Product[] = [
     category: "macska",
     price: null,
     imageUrl: "/images/products/wolt-010.webp",
-    packageSize: null,
+    packageSize: "100g",
     shortDescription:
       "Brit Premium macska nedves eledel csirke falatok – nedves eledel macskák számára.",
     description:
@@ -171,7 +171,7 @@ export const products: Product[] = [
     category: "macska",
     price: null,
     imageUrl: "/images/products/wolt-011.webp",
-    packageSize: null,
+    packageSize: "100g",
     shortDescription:
       "Brit Premium macska nedves eledel tőkehal – nedves eledel macskák számára.",
     description:
@@ -267,7 +267,7 @@ export const products: Product[] = [
     category: "macska",
     price: null,
     imageUrl: "/images/products/wolt-017.webp",
-    packageSize: null,
+    packageSize: "5kg",
     shortDescription:
       "Macskaalom levendulás – macskaalom a mindennapi használathoz.",
     description:
@@ -374,12 +374,12 @@ export const products: Product[] = [
   {
     id: "wolt-024",
     name: "Club4Paws macskatáp lazacos 1kg",
-    slug: "whiskas-alutasakos-12x85g",
+    slug: "club4paws-macskatap-lazacos-1kg",
     shopMode: "pet",
     category: "macska",
     price: null,
     imageUrl: "/images/products/wolt-024.webp",
-    packageSize: "12x85g",
+    packageSize: "1kg",
     shortDescription:
       "Club4Paws macskatáp lazacos 1kg – szárazeledel macskák számára.",
     description:
@@ -2183,22 +2183,7 @@ export const products: Product[] = [
     isAvailable: true,
     isFeatured: false,
   },
-  {
-    id: "fish-007",
-    name: "Horgász etetőanyag és csali – fotón szereplő összeállítás",
-    slug: "horgasz-etetoanyag-es-csali-foton-szereplo-osszeallitas",
-    shopMode: "fishing",
-    category: "etetőanyagok",
-    shortDescription:
-      "Horgászati termékekből álló összeállítás. A képen több csomag látható, pontos termékazonosítás szükséges.",
-    description:
-      "Horgászati termékekből álló összeállítás. A képen több csomag látható, pontos termékazonosítás szükséges. A felhasználás előtt ellenőrizd a csomagoláson szereplő gyártói útmutatót.",
-    packageSize: null,
-    price: null,
-    imageUrl: "/images/fishing/fish-007.webp",
-    isAvailable: true,
-    isFeatured: false,
-  },
+
   {
     id: "fish-008",
     name: "Oldódó bojli – fűszeres változat",
@@ -2248,7 +2233,7 @@ export const products: Product[] = [
   },
   {
     id: "fish-011",
-    name: "Oldódó oldódó bojli – tejsavas ananász",
+    name: "Oldódó bojli – tejsavas ananász",
     slug: "oldodo-oldodo-bojli-tejsavas-ananasz",
     shopMode: "fishing",
     category: "bojlik",

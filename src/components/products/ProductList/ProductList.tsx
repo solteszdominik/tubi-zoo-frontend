@@ -69,7 +69,12 @@ export default function ProductList() {
       const matchesShop = product.shopMode === activeShopMode;
 
       const matchesCategory =
-        selectedCategory === "all" || product.category === selectedCategory;
+        selectedCategory === "all" ||
+        product.category === selectedCategory ||
+        (selectedCategory === "etetőanyagok" &&
+          product.category === "method-mix") ||
+        (selectedCategory === "horgasz-kiegeszitok" &&
+          product.category === "horgasztaskak");
 
       const matchesSearch = product.name
         .toLocaleLowerCase("hu")
