@@ -6,144 +6,212 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 3px 16px rgba(12, 32, 54, 0.08);
 }
 
 .container {
   @include mixins.container;
 }
 
+.fishingTheme {
+  --header-accent: #103c66;
+  --header-nav: #103c66;
+  --header-nav-text: #fff;
+  --header-surface: #fff;
+}
+
+.petTheme {
+  --header-accent: #784a28;
+  --header-nav: #f1e1cc;
+  --header-nav-text: #382719;
+  --header-surface: #fffaf4;
+}
+
 .topBar {
-  background: vars.$color-primary-dark;
+  background: #152b46;
   color: #fff;
 
   .container {
-    min-height: 34px;
+    min-height: 32px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 16px;
+    gap: 20px;
   }
 
-  p {
-    margin: 0;
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.75);
+  span {
+    font-size: 0.72rem;
   }
 }
 
+.topBarRight {
+  margin-left: auto;
+  opacity: 0.8;
+}
+
 .catalogBadge {
-  padding: 4px 9px;
+  padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-  font-size: 0.68rem;
+  background: rgba(255, 255, 255, 0.14);
   font-weight: 700;
   white-space: nowrap;
 }
 
 .mainHeader {
-  position: relative;
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--header-surface);
 
   .container {
-    min-height: 76px;
-    display: flex;
+    min-height: 98px;
+    display: grid;
+    grid-template-columns: minmax(190px, 1fr) auto minmax(190px, 1fr);
     align-items: center;
-    gap: 28px;
+    gap: 24px;
   }
 }
 
 .logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 11px;
-  flex-shrink: 0;
-}
-
-.logoMark {
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
-  background: vars.$color-primary;
-  color: #fff;
-  font-weight: 900;
-}
-
-.logoText {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: fit-content;
+  text-decoration: none;
+}
 
-  strong {
-    font-size: 1.05rem;
-    line-height: 1.2;
-  }
+.logoName {
+  color: #12375a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.9rem, 2.6vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
 
-  small {
-    margin-top: 2px;
-    color: vars.$color-text-muted;
-    font-size: 0.7rem;
-  }
+.logoSubtitle {
+  margin-top: 5px;
+  color: #475467;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.switchArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
 }
 
 .shopSwitch {
   display: flex;
   align-items: center;
-  gap: 4px;
   padding: 4px;
-  margin-left: auto;
-  border: 1px solid vars.$color-border;
+  gap: 4px;
+  border: 1px solid #e5ddd2;
   border-radius: 999px;
-  background: vars.$color-background;
+  background: #f6f1eb;
 
   button {
-    min-height: 38px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 7px;
-    padding: 0 14px;
+    gap: 9px;
+    min-height: 42px;
+    padding: 0 23px;
     border: 0;
     border-radius: 999px;
     background: transparent;
-    color: vars.$color-text-muted;
-    font-size: 0.78rem;
-    font-weight: 700;
+    color: #5c6070;
+    font-size: 0.87rem;
+    font-weight: 800;
+    white-space: nowrap;
+    cursor: pointer;
     transition:
-      background vars.$transition-default,
-      color vars.$transition-default,
-      box-shadow vars.$transition-default;
+      background 0.2s ease,
+      color 0.2s ease,
+      box-shadow 0.2s ease;
 
     &:hover {
-      color: vars.$color-text;
+      background: rgba(255, 255, 255, 0.7);
+      color: #182d45;
     }
   }
 
-  .active {
-    background: vars.$color-surface;
-    color: vars.$color-primary;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  .activeFishing {
+    background: #103c66;
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(16, 60, 102, 0.2);
+
+    &:hover {
+      background: #103c66;
+      color: #fff;
+    }
+  }
+
+  .activePet {
+    background: #784a28;
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(120, 74, 40, 0.2);
+
+    &:hover {
+      background: #784a28;
+      color: #fff;
+    }
+  }
+}
+
+.switchCaption {
+  color: #7b6046;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.72rem;
+  font-style: italic;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+.catalogLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #182d45;
+  font-size: 0.88rem;
+  font-weight: 800;
+
+  > span:first-child {
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  &:hover {
+    color: var(--header-accent);
   }
 }
 
 .navigation {
-  display: flex;
-  align-items: center;
-  gap: 26px;
+  background: var(--header-nav);
+
+  .container {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(18px, 4vw, 64px);
+  }
 
   a {
-    position: relative;
-    padding-block: 8px;
-    color: vars.$color-text;
-    font-size: 0.85rem;
-    font-weight: 700;
-    transition: color vars.$transition-default;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--header-nav-text);
+    font-size: 0.83rem;
+    font-weight: 800;
+    transition: opacity 0.2s ease;
 
     &:hover {
-      color: vars.$color-primary;
+      opacity: 0.7;
     }
   }
 }
@@ -153,19 +221,20 @@
   width: 42px;
   height: 42px;
   padding: 10px;
-  border: 1px solid vars.$color-border;
-  border-radius: 10px;
-  background: vars.$color-surface;
+  border: 1px solid #e4e7ec;
+  border-radius: 9px;
+  background: #fff;
+  cursor: pointer;
 
   span {
+    display: block;
     width: 100%;
     height: 2px;
-    display: block;
     border-radius: 999px;
-    background: vars.$color-text;
+    background: #152b46;
     transition:
-      transform vars.$transition-default,
-      opacity vars.$transition-default;
+      transform 0.2s ease,
+      opacity 0.2s ease;
 
     & + span {
       margin-top: 5px;
@@ -189,49 +258,64 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .mainHeader {
     .container {
-      min-height: 70px;
-      gap: 16px;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 12px;
     }
   }
 
   .shopSwitch {
-    margin-left: auto;
+    button {
+      padding-inline: 15px;
+    }
+  }
+
+  .logoName {
+    font-size: 1.85rem;
+  }
+
+  .logoSubtitle {
+    font-size: 0.64rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .mainHeader {
+    .container {
+      min-height: 78px;
+      grid-template-columns: 1fr auto auto;
+    }
+  }
+
+  .switchArea {
+    gap: 0;
+  }
+
+  .switchCaption,
+  .catalogLink {
+    display: none;
   }
 
   .menuButton {
     display: block;
-    flex-shrink: 0;
   }
 
   .navigation {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    max-height: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    overflow: hidden;
-    visibility: hidden;
-    opacity: 0;
-    border-top: 1px solid transparent;
-    background: vars.$color-surface;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-    transition:
-      max-height 0.25s ease,
-      opacity vars.$transition-default,
-      visibility vars.$transition-default;
+    display: none;
+
+    .container {
+      padding-block: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
 
     a {
-      width: min(100% - 32px, vars.$container-width);
-      margin-inline: auto;
-      padding-block: 16px;
-      border-bottom: 1px solid vars.$color-border;
+      min-height: 48px;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 
       &:last-child {
         border-bottom: 0;
@@ -240,90 +324,58 @@
   }
 
   .navigationOpen {
-    max-height: 240px;
-    visibility: visible;
-    opacity: 1;
-    border-top-color: vars.$color-border;
+    display: block;
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
   .topBar {
-    .container {
-      justify-content: center;
-    }
-
-    p {
-      display: none;
-    }
+    display: none;
   }
 
   .mainHeader {
     .container {
-      min-height: 66px;
-      gap: 10px;
+      min-height: 70px;
+      gap: 8px;
     }
   }
 
-  .logoMark {
-    width: 40px;
-    height: 40px;
+  .logoName {
+    font-size: 1.45rem;
   }
 
-  .logoText {
-    small {
-      display: none;
-    }
+  .logoSubtitle {
+    display: none;
   }
 
   .shopSwitch {
-    gap: 2px;
     padding: 3px;
+    gap: 2px;
 
     button {
-      min-height: 36px;
-      gap: 5px;
-      padding-inline: 10px;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .topBar {
-    display: none;
-  }
-
-  .logoText {
-    display: none;
-  }
-
-  .shopSwitch {
-    flex: 1;
-    justify-content: center;
-
-    button {
-      flex: 1;
-      padding-inline: 8px;
+      min-height: 35px;
+      padding-inline: 9px;
+      gap: 4px;
+      font-size: 0.72rem;
     }
   }
 
   .menuButton {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
+    padding: 8px;
   }
 }
 
-@media (max-width: 370px) {
-  .switchLabel {
-    display: none;
+@media (max-width: 390px) {
+  .logoName {
+    font-size: 1.2rem;
   }
 
   .shopSwitch {
-    flex: initial;
-
     button {
-      width: 42px;
-      flex: initial;
+      padding-inline: 7px;
+      font-size: 0.68rem;
     }
   }
 }

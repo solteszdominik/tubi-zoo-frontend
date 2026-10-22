@@ -12,25 +12,22 @@ import styles from "./Header.module.scss";
 
 export default function Header() {
   const { shopMode, setShopMode } = useShop();
-
   const pathname = usePathname();
   const router = useRouter();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleShopChange = (mode: ShopMode) => {
-    if (mode === shopMode) {
-      return;
-    }
+  const isHome = pathname === "/";
+  const isPet = shopMode === "pet";
 
+  const departmentUrl = (mode: ShopMode) =>
+    mode === "fishing" ? "/horgaszat" : "/allateledel";
+
+  const handleShopChange = (mode: ShopMode) => {
     setShopMode(mode);
     setMobileMenuOpen(false);
 
-    const isProductDetailPage = pathname.startsWith("/termekek/");
-
-    if (isProductDetailPage) {
-      router.push("/termekek");
-    }
+    router.push(departmentUrl(mode));
   };
 
   const closeMobileMenu = () => {
@@ -38,10 +35,16 @@ export default function Header() {
   };
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${
+        isPet ? styles.petTheme : styles.fishingTheme
+      }`}
+    >
       <div className={styles.topBar}>
         <div className={styles.container}>
-          <p>Tubi-Zoo • Horgászat és állateledel egy helyen</p>
+          <span>Üdvözlünk a Tubi-Zoo világában!</span>
+
+          <span className={styles.topBarRight}>Két világ. Egy üzlet.</span>
 
           {!siteConfig.webshopEnabled && (
             <span className={styles.catalogBadge}>Online katalógus</span>
@@ -51,77 +54,124 @@ export default function Header() {
 
       <div className={styles.mainHeader}>
         <div className={styles.container}>
-          <Link href="/" className={styles.logo} onClick={closeMobileMenu}>
-            <span className={styles.logoMark}>TZ</span>
+          <Link
+            href="/"
+            className={styles.logo}
+            onClick={closeMobileMenu}
+            aria-label="Tubi-Zoo főoldal"
+          >
+            <span className={styles.logoName}>Tubi-Zoo</span>
 
-            <span className={styles.logoText}>
-              <strong>Tubi-Zoo</strong>
-              <small>Horgászat & Állateledel</small>
+            <span className={styles.logoSubtitle}>
+              Állateledel és horgászcikk üzlet
             </span>
           </Link>
 
-          <div
-            className={styles.shopSwitch}
-            role="group"
-            aria-label="Üzletrész választása"
-          >
-            <button
-              type="button"
-              className={shopMode === "fishing" ? styles.active : ""}
-              onClick={() => handleShopChange("fishing")}
-              aria-pressed={shopMode === "fishing"}
+          <div className={styles.switchArea}>
+            <div
+              className={styles.shopSwitch}
+              role="group"
+              aria-label="Részlegválasztás"
             >
-              <span aria-hidden="true">🎣</span>
-              <span className={styles.switchLabel}>Horgászat</span>
-            </button>
+              <button
+                type="button"
+                className={
+                  !isHome && shopMode === "fishing" ? styles.activeFishing : ""
+                }
+                onClick={() => handleShopChange("fishing")}
+                aria-pressed={!isHome && shopMode === "fishing"}
+              >
+                <span aria-hidden="true">🎣</span>
+                <span>Horgászat</span>
+              </button>
 
-            <button
-              type="button"
-              className={shopMode === "pet" ? styles.active : ""}
-              onClick={() => handleShopChange("pet")}
-              aria-pressed={shopMode === "pet"}
-            >
-              <span aria-hidden="true">🐾</span>
-              <span className={styles.switchLabel}>Állateledel</span>
-            </button>
+              <button
+                type="button"
+                className={
+                  !isHome && shopMode === "pet" ? styles.activePet : ""
+                }
+                onClick={() => handleShopChange("pet")}
+                aria-pressed={!isHome && shopMode === "pet"}
+              >
+                <span aria-hidden="true">🐾</span>
+                <span>Állateledel</span>
+              </button>
+            </div>
+
+            <span className={styles.switchCaption}>
+              Egy üzlet. Két világ. Mindig veled.
+            </span>
           </div>
 
-          <button
-            type="button"
-            className={`${styles.menuButton} ${
-              mobileMenuOpen ? styles.menuButtonOpen : ""
-            }`}
-            onClick={() => setMobileMenuOpen((current) => !current)}
-            aria-expanded={mobileMenuOpen}
-            aria-controls="main-navigation"
-            aria-label={mobileMenuOpen ? "Menü bezárása" : "Menü megnyitása"}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
-
-          <nav
-            id="main-navigation"
-            className={`${styles.navigation} ${
-              mobileMenuOpen ? styles.navigationOpen : ""
-            }`}
-            aria-label="Fő navigáció"
-          >
-            <Link href="/" onClick={closeMobileMenu}>
-              Főoldal
+          <div className={styles.headerActions}>
+            <Link
+              href="/termekek"
+              className={styles.catalogLink}
+              onClick={closeMobileMenu}
+            >
+              <span aria-hidden="true">⌕</span>
+              <span>Termékek</span>
             </Link>
 
-            <Link href="/termekek" onClick={closeMobileMenu}>
-              Termékek
-            </Link>
-
-            <Link href="/kapcsolat" onClick={closeMobileMenu}>
-              Kapcsolat
-            </Link>
-          </nav>
+            <button
+              type="button"
+              className={`${styles.menuButton} ${
+                mobileMenuOpen ? styles.menuButtonOpen : ""
+              }`}
+              onClick={() => setMobileMenuOpen((current) => !current)}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="main-navigation"
+              aria-label={mobileMenuOpen ? "Menü bezárása" : "Menü megnyitása"}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
       </div>
+
+      <nav
+        id="main-navigation"
+        className={`${styles.navigation} ${
+          mobileMenuOpen ? styles.navigationOpen : ""
+        }`}
+        aria-label="Fő navigáció"
+      >
+        <div className={styles.container}>
+          <Link href="/" onClick={closeMobileMenu}>
+            Tubi-Zoo
+          </Link>
+
+          <Link
+            href="/allateledel"
+            onClick={() => {
+              setShopMode("pet");
+              closeMobileMenu();
+            }}
+          >
+            Állateledel
+          </Link>
+
+          <Link
+            href="/horgaszat"
+            onClick={() => {
+              setShopMode("fishing");
+              closeMobileMenu();
+            }}
+          >
+            Horgászat
+          </Link>
+
+          <Link href="/termekek" onClick={closeMobileMenu}>
+            Termékek
+          </Link>
+
+          <Link href="/kapcsolat" onClick={closeMobileMenu}>
+            Kapcsolat
+          </Link>
+        </div>
+      </nav>
     </header>
   );
 }

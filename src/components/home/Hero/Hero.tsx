@@ -11,7 +11,7 @@ import styles from "./Hero.module.scss";
 const heroImages = {
   fishing: {
     src: "/images/hero/fishing.webp",
-    alt: "Horgászfelszerelés és horgászati termékek",
+    alt: "Horgászat a vízparton",
   },
   pet: {
     src: "/images/hero/cat-dog-.webp",
@@ -26,10 +26,31 @@ export default function Hero() {
   const image = heroImages[shopMode];
 
   return (
-    <section className={`${styles.hero} ${styles[shopMode]}`}>
+    <section
+      className={`${styles.hero} ${styles[shopMode]}`}
+      aria-label={
+        shopMode === "fishing" ? "Tubi-Zoo Horgászat" : "Tubi-Zoo Állateledel"
+      }
+    >
+      <Image
+        key={shopMode}
+        src={image.src}
+        alt={image.alt}
+        fill
+        priority
+        sizes="100vw"
+        className={styles.backgroundImage}
+      />
+
+      <div className={styles.overlay} />
+
       <div className={styles.container}>
         <div className={styles.content}>
-          <span className={styles.eyebrow}>{content.eyebrow}</span>
+          <span className={styles.eyebrow}>
+            {shopMode === "fishing"
+              ? "TUBI-ZOO HORGÁSZAT"
+              : "TUBI-ZOO ÁLLATELEDEL"}
+          </span>
 
           <h1>{content.title}</h1>
 
@@ -38,6 +59,7 @@ export default function Hero() {
           <div className={styles.actions}>
             <Link href="/termekek" className={styles.primaryButton}>
               {content.primaryButton}
+              <span aria-hidden="true">→</span>
             </Link>
 
             <a href="#kategoriak" className={styles.secondaryButton}>
@@ -45,27 +67,9 @@ export default function Hero() {
             </a>
           </div>
         </div>
-
-        <div className={styles.visual}>
-          <Image
-            key={shopMode}
-            src={image.src}
-            alt={image.alt}
-            fill
-            priority
-            sizes="(max-width: 700px) 100vw, (max-width: 1100px) 45vw, 520px"
-            className={styles.heroImage}
-          />
-
-          <div className={styles.imageOverlay} />
-
-          <span className={styles.visualLabel}>
-            {shopMode === "fishing"
-              ? "TUBI-ZOO HORGÁSZAT"
-              : "TUBI-ZOO ÁLLATELEDEL"}
-          </span>
-        </div>
       </div>
+
+      <div className={styles.bottomAccent} />
     </section>
   );
 }

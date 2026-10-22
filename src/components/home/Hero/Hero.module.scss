@@ -1,280 +1,246 @@
-@use "../../../styles/variables" as vars;
 @use "../../../styles/mixins" as mixins;
 
 .hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: clamp(480px, 44vw, 650px);
   overflow: hidden;
-  transition: background 0.3s ease;
-
-  .container {
-    @include mixins.container;
-
-    min-height: 560px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
-    align-items: center;
-    gap: clamp(32px, 5vw, 72px);
-    padding-block: 72px;
-  }
-}
-
-.fishing {
-  background: linear-gradient(110deg, #152640 0%, #1f3556 70%, #294669 100%);
   color: #fff;
+  background: #142c43;
 }
 
-.pet {
-  background: linear-gradient(110deg, #f1e6d4 0%, #faf7f1 100%);
-  color: vars.$color-text;
+.backgroundImage {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.container {
+  @include mixins.container;
+
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  padding-block: 90px;
 }
 
 .content {
-  position: relative;
-  z-index: 1;
-  max-width: 650px;
+  max-width: 680px;
 
   h1 {
-    max-width: 620px;
+    max-width: 660px;
     margin: 18px 0 22px;
-    font-size: clamp(2.4rem, 4.8vw, 4.5rem);
-    line-height: 1.04;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 5.5vw, 5.4rem);
+    font-weight: 700;
+    line-height: 1.07;
     letter-spacing: -0.045em;
+    text-wrap: balance;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.18);
   }
 
   p {
-    max-width: 560px;
+    max-width: 510px;
     margin: 0;
-    font-size: clamp(1rem, 1.7vw, 1.15rem);
-    line-height: 1.7;
-    opacity: 0.85;
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.92);
   }
 }
 
 .eyebrow {
-  display: inline-flex;
-  padding: 8px 14px;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  display: inline-block;
+  color: #f4d9ac;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  opacity: 0.85;
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 34px;
+  gap: 14px;
+  margin-top: 32px;
 }
 
 .primaryButton,
 .secondaryButton {
-  min-height: 48px;
+  min-height: 51px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 24px;
-  border-radius: vars.$border-radius-sm;
+  gap: 16px;
+  padding: 0 25px;
+  border-radius: 7px;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
-
   transition:
-    transform vars.$transition-default,
-    background vars.$transition-default,
-    box-shadow vars.$transition-default;
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 
   &:hover {
     transform: translateY(-2px);
   }
+
+  &:focus-visible {
+    outline: 3px solid #f4d9ac;
+    outline-offset: 3px;
+  }
+}
+
+.primaryButton {
+  background: #fff;
+  color: #123654;
+
+  &:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.secondaryButton {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(5px);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.16);
+  }
+}
+
+.bottomAccent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
 }
 
 .fishing {
-  .primaryButton {
-    background: #fff;
-    color: vars.$color-primary;
-
-    &:hover {
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    }
+  .overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(8, 28, 48, 0.94) 0%,
+      rgba(8, 28, 48, 0.76) 36%,
+      rgba(8, 28, 48, 0.25) 75%,
+      rgba(8, 28, 48, 0.08) 100%
+    );
   }
 
-  .secondaryButton {
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    color: #fff;
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
+  .bottomAccent {
+    background: #2b6b99;
   }
 }
 
 .pet {
+  .overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(55, 32, 18, 0.88) 0%,
+      rgba(55, 32, 18, 0.68) 38%,
+      rgba(55, 32, 18, 0.17) 78%,
+      rgba(55, 32, 18, 0.05) 100%
+    );
+  }
+
+  .eyebrow {
+    color: #f7d6a2;
+  }
+
   .primaryButton {
-    background: vars.$color-primary;
-    color: #fff;
-
-    &:hover {
-      box-shadow: 0 8px 24px rgba(21, 38, 64, 0.15);
-    }
+    background: #f4e4cb;
+    color: #53361e;
   }
 
-  .secondaryButton {
-    border: 1px solid vars.$color-primary;
-    color: vars.$color-primary;
-
-    &:hover {
-      background: rgba(21, 38, 64, 0.06);
-    }
+  .bottomAccent {
+    background: #b78352;
   }
 }
-
-// HERO IMAGE
-
-.visual {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 5 / 4;
-  max-height: 480px;
-  overflow: hidden;
-  isolation: isolate;
-  border-radius: 28px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
-}
-
-.heroImage {
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.5s ease;
-}
-
-.visual:hover .heroImage {
-  transform: scale(1.035);
-}
-
-.imageOverlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    180deg,
-    transparent 55%,
-    rgba(0, 0, 0, 0.55) 100%
-  );
-  pointer-events: none;
-}
-
-.visualLabel {
-  position: absolute;
-  left: 24px;
-  bottom: 24px;
-  z-index: 2;
-
-  color: #fff;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-}
-
-// TABLET
 
 @media (max-width: 900px) {
   .hero {
-    .container {
-      min-height: auto;
-      gap: 28px;
-      padding-block: 56px;
-    }
+    min-height: 520px;
+  }
+
+  .container {
+    padding-block: 70px;
   }
 
   .content {
-    h1 {
-      font-size: clamp(2.1rem, 5vw, 3.3rem);
-    }
-  }
+    max-width: 580px;
 
-  .visual {
-    border-radius: 22px;
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 4.4rem);
+    }
   }
 }
 
-// MOBILE
-
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .hero {
-    .container {
-      grid-template-columns: 1fr;
-      gap: 32px;
-      padding-block: 48px;
-    }
+    min-height: 560px;
+    align-items: flex-end;
+  }
+
+  .backgroundImage {
+    object-position: 60% center;
+  }
+
+  .container {
+    padding-block: 90px 55px;
   }
 
   .content {
     max-width: 100%;
-    text-align: center;
 
     h1 {
-      max-width: 100%;
-      font-size: clamp(2.2rem, 7vw, 3.2rem);
+      margin: 14px 0 18px;
+      font-size: clamp(2.6rem, 9vw, 3.5rem);
     }
 
     p {
-      margin-inline: auto;
+      font-size: 0.96rem;
+      line-height: 1.65;
     }
   }
 
-  .actions {
-    justify-content: center;
+  .eyebrow {
+    font-size: 0.7rem;
   }
 
-  .visual {
-    width: 100%;
-    max-height: 420px;
-    aspect-ratio: 16 / 10;
-    border-radius: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    .container {
-      padding-block: 40px;
-      gap: 28px;
-    }
-  }
-
-  .content {
-    h1 {
-      margin-block: 14px 16px;
-      font-size: 2.35rem;
-    }
-
-    p {
-      font-size: 0.95rem;
+  @media (max-width: 600px) {
+    .fishing,
+    .pet {
+      .overlay {
+        background: linear-gradient(
+          0deg,
+          rgba(12, 27, 42, 0.96) 0%,
+          rgba(12, 27, 42, 0.76) 45%,
+          rgba(12, 27, 42, 0.12) 100%
+        );
+      }
     }
   }
 
   .actions {
     flex-direction: column;
+    gap: 10px;
+    margin-top: 26px;
   }
 
   .primaryButton,
   .secondaryButton {
     width: 100%;
-  }
-
-  .visual {
-    aspect-ratio: 4 / 3;
-    border-radius: 16px;
-  }
-
-  .visualLabel {
-    left: 16px;
-    bottom: 16px;
-    font-size: 0.65rem;
-    letter-spacing: 0.12em;
   }
 }
