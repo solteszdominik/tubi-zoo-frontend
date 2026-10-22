@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 import { useShop } from "@/context/ShopContext";
@@ -7,10 +8,22 @@ import { heroContent } from "@/data/home";
 
 import styles from "./Hero.module.scss";
 
+const heroImages = {
+  fishing: {
+    src: "/images/hero/fishing.webp",
+    alt: "Horgászfelszerelés és horgászati termékek",
+  },
+  pet: {
+    src: "/images/hero/cat-dog-.webp",
+    alt: "Kutya és macska – Tubi-Zoo állateledel",
+  },
+};
+
 export default function Hero() {
   const { shopMode } = useShop();
 
   const content = heroContent[shopMode];
+  const image = heroImages[shopMode];
 
   return (
     <section className={`${styles.hero} ${styles[shopMode]}`}>
@@ -33,13 +46,23 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className={styles.visual} aria-hidden="true">
-          <span className={styles.visualIcon}>
-            {shopMode === "fishing" ? "🎣" : "🐾"}
-          </span>
+        <div className={styles.visual}>
+          <Image
+            key={shopMode}
+            src={image.src}
+            alt={image.alt}
+            fill
+            priority
+            sizes="(max-width: 700px) 100vw, (max-width: 1100px) 45vw, 520px"
+            className={styles.heroImage}
+          />
+
+          <div className={styles.imageOverlay} />
 
           <span className={styles.visualLabel}>
-            {shopMode === "fishing" ? "HORGÁSZAT" : "ÁLLATELEDEL"}
+            {shopMode === "fishing"
+              ? "TUBI-ZOO HORGÁSZAT"
+              : "TUBI-ZOO ÁLLATELEDEL"}
           </span>
         </div>
       </div>
