@@ -1915,14 +1915,14 @@ export const products: Product[] = [
   },
 
   {
-    id: "wolt-127",
+    id: "wolt-128",
     name: "Versele Laga Nature Cavia - tengerimalac",
     slug: "versele-laga-nature-cavia",
     shopMode: "pet",
     category: "ragcsalok",
     price: null,
-    imageUrl: "/images/products/wolt-127.webp",
-    packageSize: "700g",
+    imageUrl: "/images/products/wolt-128.webp",
+    packageSize: "700 g",
     shortDescription:
       "Változatos, magas rosttartalmú eledel tengerimalacok számára.",
     description:
@@ -1931,17 +1931,18 @@ export const products: Product[] = [
     isFeatured: false,
   },
   {
-    id: "wolt-128",
-    name: "Tengeri malactáp 1kg",
-    slug: "tengeri-malactap-1kg",
+    id: "wolt-127",
+    name: "Versele Laga Nature Hamster - hörcsög",
+    slug: "versele-laga-nature-hamster",
     shopMode: "pet",
     category: "ragcsalok",
     price: null,
-    imageUrl: "/images/products/wolt-128.webp",
-    packageSize: "1kg",
-    shortDescription: "Tengeri malactáp 1kg – kisállateledel.",
+    imageUrl: "/images/products/wolt-127.jpg",
+    packageSize: "700 g",
+    shortDescription:
+      "Változatos, magas rosttartalmú eledel hörcsögök számára.",
     description:
-      "Tengeri malactáp 1kg: kisállatok etetéséhez kínált termék. A pontos összetételt és felhasználási javaslatot a csomagoláson találod.",
+      "Jellemzők: - Lisztbogár, mint állati fehérje a kiegyensúlyozott étrendért - Változatos eledel, antioxidánsokat tartalmazó diófélékkel és magvakkal - Magas fehérje összetétel az aktivitásért Összetétel: Gabona, növényi származékok, zöldésgek (zölborsó 12%), magvak (napraforgómag 6%), zöldség fehérje kivonat, gyümölcs (sárgabarack 1,5%, mazsola 1%), diófélék, rovarok (lisztbogár 4%), ásványi anyagok, élesztő, olajok és zsírok, gyógynövények, MOS, FOS, körömvirág, szőlőmag, gabonában gazdag keverék",
     isAvailable: false,
     isFeatured: false,
   },
@@ -1953,7 +1954,7 @@ export const products: Product[] = [
     category: "ragcsalok",
     price: null,
     imageUrl: "/images/products/wolt-129.webp",
-    packageSize: "30l",
+    packageSize: "30 l",
     shortDescription: "Rágcsálóalom 30l – kisállatalom.",
     description:
       "Rágcsálóalom 30l: a kisállatok lakóhelyének almozásához kínált termék. A pontos összetételt és felhasználási javaslatot a csomagoláson találod.",
@@ -1968,10 +1969,11 @@ export const products: Product[] = [
     category: "ragcsalok",
     price: null,
     imageUrl: "/images/products/wolt-130.webp",
-    packageSize: null,
-    shortDescription: "Trópus réti széna – réti széna.",
+    packageSize: "10 l",
+    shortDescription:
+      "Kiváló minőségű, gondosan válogatott fűfélékből készült, csincsillák és más növényevő kisállatok számára.",
     description:
-      "Trópus réti széna: kisállatok takarmányozásához kínált termék. A pontos összetételt és felhasználási javaslatot a csomagoláson találod.",
+      "Friss, illatos, ízletes. Magas rosttartalom, természetes, adalékanyag-mentes, fogkoptató és emésztés segít őhatás. Tedd kedvenced étrendjét változatosabbá és egészségesebbé a Trópusi réti szénával.",
     isAvailable: false,
     isFeatured: false,
   },
