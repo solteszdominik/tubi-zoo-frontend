@@ -2,7 +2,7 @@ import ContactPage from "@/components/contact/ContactPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Kapcsolat | Tubi-Zoo",
+  title: "Kapcsolat",
   description:
     "Tubi-Zoo Debrecen elérhetőségek, nyitvatartás és üzletinformációk.",
 };

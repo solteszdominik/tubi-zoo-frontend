@@ -9,8 +9,16 @@ import "./globals.scss";
 import Footer from "@/components/layout/Footer/Footer";
 
 export const metadata: Metadata = {
-  title: "Tubi-Zoo",
-  description: "Horgászat és állateledel egy helyen.",
+  title: {
+    default: "Tubi-Zoo | Horgászat és állateledel Debrecenben",
+    template: "%s | Tubi-Zoo",
+  },
+  description:
+    "Horgászfelszerelések, csalik, etetőanyagok, állateledelek és kiegészítők Debrecenben. Fedezd fel a Tubi-Zoo kínálatát!",
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default async function RootLayout({
