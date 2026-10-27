@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
 import { useShop } from "@/context/ShopContext";
-import { siteConfig } from "@/config/siteConfig";
 import type { ShopMode } from "@/types/shop";
 
 import styles from "./Header.module.scss";
@@ -40,18 +39,6 @@ export default function Header() {
         isPet ? styles.petTheme : styles.fishingTheme
       }`}
     >
-      <div className={styles.topBar}>
-        <div className={styles.container}>
-          <span>Üdvözlünk a Tubi-Zoo világában!</span>
-
-          <span className={styles.topBarRight}>Két világ. Egy üzlet.</span>
-
-          {!siteConfig.webshopEnabled && (
-            <span className={styles.catalogBadge}>Online katalógus</span>
-          )}
-        </div>
-      </div>
-
       <div className={styles.mainHeader}>
         <div className={styles.container}>
           <Link

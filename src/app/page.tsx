@@ -26,9 +26,10 @@ const highlights = [
   },
   {
     number: "03",
-    title: "Fagyasztott csalik",
-    description: "Fagyasztott csalik, amelyek üzletünkben vásárolhatók meg.",
-    label: "Fagyasztott csalik",
+    title: "Fagyasztott hal eledel",
+    description:
+      "Fagyasztott hal eledel, amelyek üzletünkben vásárolhatók meg.",
+    label: "Fagyasztott hal eledel",
     image: "/images/fishing/fish-package5.jpg",
   },
 ];
