@@ -162,7 +162,9 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
           <div className={styles.description}>
             <span className={styles.sectionEyebrow}>Részletes ismertető</span>
             <h2>Termékinformáció</h2>
-            <p>{product.description}</p>
+            <p className="whitespace-pre-line text-gray-700">
+              {product.description}
+            </p>
           </div>
         )}
         <RelatedProducts product={product} />

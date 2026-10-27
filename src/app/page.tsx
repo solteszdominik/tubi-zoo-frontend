@@ -236,7 +236,6 @@ export default function Home() {
           <div className={styles.aboutPlaceholder}>
             <span>HAMAROSAN</span>
             <strong>Ismerd meg üzletünket!</strong>
-            <p>Ide kerülnek majd a saját Tubi-Zoo üzletfotók.</p>
           </div>
         </div>
       </section>

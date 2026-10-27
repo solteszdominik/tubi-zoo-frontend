@@ -1784,6 +1784,23 @@ export const products: Product[] = [
   },
 
   {
+    id: "wolt-120",
+    name: "Budgies Prestige Versele Laga 1kg - hullámos papagáj eleség",
+    slug: "budgies-prestige-versele-laga-1kg-hullamos-papagaj-eledel",
+    shopMode: "pet",
+    category: "madarak",
+    price: null,
+    imageUrl: "/images/products/wolt-121.webp",
+    packageSize: "1 kg",
+    shortDescription:
+      "Eledel hullámos papagájoknak és kis exotikus madaraknak.",
+    description:
+      "Összetétel: sárga köles, vörös köles, fehér köles, hántolt zab, kanári köles, lenmag, néger mag.",
+    isAvailable: false,
+    isFeatured: false,
+  },
+
+  {
     id: "wolt-121",
     name: "Budgies Prestige Versele Laga 1kg - hullámos papagáj eleség",
     slug: "budgies-prestige-versele-laga-1kg-hullamos-papagaj-eledel",
@@ -1802,12 +1819,12 @@ export const products: Product[] = [
   {
     id: "wolt-122",
     name: "Versele-Laga Prestige óriáspapagáj-eledel",
-    slug: "nagytestu-papagaj-4kg",
+    slug: "nagytestu-papagaj-1kg",
     shopMode: "pet",
     category: "madarak",
     price: null,
     imageUrl: "/images/products/wolt-122.jpg",
-    packageSize: "4kg",
+    packageSize: "1 kg",
     shortDescription:
       "Kifejezetten nagy papagájok számára kifejlesztett madáreledel, Kiegyensúlyozott magkeverék, Támogatja a gyönyörű tollazatot és a jólétet, 100%-ban természetes összetevőket tartalmaz",
     description:
@@ -1823,7 +1840,7 @@ export const products: Product[] = [
     category: "madarak",
     price: null,
     imageUrl: "/images/products/wolt-123.webp",
-    packageSize: "1kg",
+    packageSize: "1 kg",
     shortDescription:
       "Versele-Laga Prestige Tropical Finches - Prémium alapeleség trópusi pintyek számára",
     description:
@@ -1833,61 +1850,83 @@ export const products: Product[] = [
   },
   {
     id: "wolt-124",
-    name: "124. Nyúl eledel 500g",
-    slug: "124-nyul-eledel-500g",
+    name: "Versele-Laga Cuni Complete Adult nyúleledel",
+    slug: "versele-laga-cuni-complete-adult-nyuleledel",
     shopMode: "pet",
     category: "ragcsalok",
     price: null,
     imageUrl: "/images/products/wolt-124.webp",
-    packageSize: "500g",
-    shortDescription: "124. Nyúl eledel 500g – kisállateledel.",
+    packageSize: "1.75 kg",
+    shortDescription:
+      "Prémium eleség nyulaknak és törpenyulaknak. Versele-Laga Cuni Adult complete - Teljes értékű és ízletes, 100%-ban könnyen emészthető alapanyagokból összeállított extrudált eledel nyulak és törpenyulak számára.",
     description:
-      "124. Nyúl eledel 500g: kisállatok etetéséhez kínált termék. A pontos összetételt és felhasználási javaslatot a csomagoláson találod.",
+      "Versele-Laga Cuni Adult complete – Teljes értékű és ízletes, 100%-ban könnyen emészthető alapanyagokból összeállított extrudált eledel nyulak és törpenyulak számára. A Versele-Laga Cuni complete fontosabb jellemzői: • A szemcsékben található hosszú rostok tökéletes rágást és megfelelõ fogkoptatást biztosítanak. • A hozzáadott friss zöldségek kellemes ízt biztosítanak. • Az eledelben nagy mennyiségben található hosszú rostok garantálják az egészséges emésztést és a kiegyensúlyozott bélmûködést. • A specifikus rostok hozzájárulnak szõrgolyók kialakulásának megelõzéséhez az emésztõrendszerben. Összetevők: Növényi eredetű származékok (timothy 8%), zöldségek (sárgarépa 5,4%*), magvak, ásványi anyagok, gyógynövények (vörös lóhere, bordás útifű, fehér lóhere, levélfű) 1%, frukto-oligoszacharidok, jukka *dehidratált, ekvivalens *% szárítás előtt Beltartalmi értékek: Nyersfehérje 14,0%, nyers zsír 3,0%, nyersrost 20,0%, nyershamu 7,5%, kalcium 0,8%, foszfor 0,6% Adalékanyagok/kg: 3a672a A-vitamin 10000 NE, 3a671 D3-vitamin 1200 NE, 3a700 E-vitamin 80 NE, 3a312 C-vitamin 100 mg, 3b103 (vas) 100 mg, 3b502 (mangán) 75mg3b3b) 10 mg, 3b202 (jód) 2 mg, 3b801 (szelén) 0,2 mg",
     isAvailable: false,
     isFeatured: false,
   },
   {
     id: "wolt-125",
-    name: "125. Nyúl eledel 500g",
-    slug: "125-nyul-eledel-500g",
+    name: "Versele-Laga Cuni Junior Complete - Nyúleledel",
+    slug: "versele-laga-cuni-junior-complete-nyuleledel",
     shopMode: "pet",
     category: "ragcsalok",
     price: null,
     imageUrl: "/images/products/wolt-125.webp",
-    packageSize: "500g",
-    shortDescription: "125. Nyúl eledel 500g – kisállateledel.",
+    packageSize: "1.75 kg",
+    shortDescription:
+      "A Versele Laga Junior Copmlete fehérjében gazdag all in-ine extrudált táplálék 6-8 hónapos törpenyulak számára.",
     description:
-      "125. Nyúl eledel 500g: kisállatok etetéséhez kínált termék. A pontos összetételt és felhasználási javaslatot a csomagoláson találod.",
+      "A Versele-Laga Complete Cuni Junior gond nélküli táplálék. Az all-in one ízesítésű golyókkal elkerülhető a kiválogatási étkezési szokás, ezáltal a fiatal nyuluk megkapja az összes fontos tápanyagot és tökéletesen egészséges marad. A gabona mentes táp hosszú rostokkal és magas kálcium, fehérje és vitamin tartalommal rendelkezik. Az összes építőelem biztosítja a megfelelő növekedést.A Versele-Laga Complete Junior állatorvosok álltal, tudományos ismeretek alapján fejlesztették ki Általános tudnivalók: Gyógynövényekkel dúsított az optimális gyomor és bél működésért. Magasabb kálcium fehérje és vitamin tartalom, amelyek hozzájárulnak a megfelelő növekedéshez. Természetes növényi színsejtekkel, nagyobb ellenállást biztosít a természet viszontagságai ellen. Természetes emésztés növelő gyógynövények keverék. A jobb tápanyag emésztésért. ÖSSZETÉTEL: Zöldség származékok( alfalfa 35% ) Zöldség fehérje kivonat, magok (2%), Ásványi anyagok,,Fructo-oligosaccharides (0,3%), körömvirág, yucca Fehérje 17%, Zsírtartalom 3,0% Nyers rost 20% ,Nyers hamu 8,0% Kálcium 1,0%, Foszfor 0,8%. Antioxidáns Használati útmutató: Szabadon beadható növekedési fázis szerint. Mérettől és a a nyúl fajtájától függően az ajánlott átlagos napi adag 30g-60g. Javaslat: Friss táp és és ivóvíz biztosítása.Adjon elegendő szénát.",
     isAvailable: false,
     isFeatured: false,
   },
+
   {
     id: "wolt-126",
-    name: "Tengeri malactáp 850g",
-    slug: "tengeri-malactap-850g",
+    name: "Versele-Laga Crispy Muesli Hamster & Co - Ropogós, kiegyensúlyozott keverék (törpe)hörcsögök, egerek, patkányok és futóegerek részére  ",
+    slug: "versele-laga-crispy-muesli-hamster",
     shopMode: "pet",
     category: "ragcsalok",
     price: null,
     imageUrl: "/images/products/wolt-126.webp",
-    packageSize: "850g",
-    shortDescription: "Tengeri malactáp 850g – kisállateledel.",
+    packageSize: "750g",
+    shortDescription:
+      "Ropogós, kiegyensúlyozott keverék (törpe)hörcsögök, egerek, patkányok és futóegerek részére.",
     description:
-      "Tengeri malactáp 850g: kisállatok etetéséhez kínált termék. A pontos összetételt és felhasználási javaslatot a csomagoláson találod.",
+      " Ropogós Müzli Hörcsögöknek egy változatos, tápanyagokban kiegyensúlyozott keverék, tele ízzel és textúrával, hogy a kis felfedezők boldogok és elégedettek legyenek. Mesterséges színezékek és aromák nélkül. Minden hörcsögfajta számára alkalmas. Kiegyensúlyozott, gabonákkal és magvakkal teli keverék, amelyet hörcsögöd táplálkozási igényeinek kielégítésére szabtak. Ízletes és változatos gabonafélékkel, magvakkal és zöldségekkel, például ropogós borsóval és földimogyoróval. Tartalmazza az összes esszenciális tápanyagot, amely támogatja hörcsöge napi energiaszintjét és vitalitását",
     isAvailable: false,
     isFeatured: false,
   },
+
+  {
+    id: "wolt-134",
+    name: "Versele-Laga Crispy Muesli Guinea Pig - Müzli eleség tengerimalac részére ",
+    slug: "versele-laga-crispy-muesli-guinea-pig",
+    shopMode: "pet",
+    category: "ragcsalok",
+    price: null,
+    imageUrl: "/images/products/wolt-134.jpg",
+    packageSize: "850g",
+    shortDescription: "Ropogós, kiegyensúlyozott keverék tengerimalacoknak",
+    description:
+      " A Ropogós Müzli Tengerimalacoknak egy rostban gazdag, tápanyagokban kiegyensúlyozott keverék, tele ízzel és textúrával, amely leköti a kíváncsi rágcsálókat. Mesterséges színezékek és aromák nélkül. Minden tengerimalac fajtának alkalmas. Rostban gazdag, kiegyensúlyozott tápértékkel rendelkező keverék, amely támogatja az egészséges emésztést, Ízletes és változatos zöldségekkel, például ropogós borsóval és ropogós paprikadarabokkal, Tartalmazza a tengerimalac mindennapi jólétéhez szükséges összes esszenciális tápanyagot, hozzáadott C-vitaminnal",
+    isAvailable: false,
+    isFeatured: false,
+  },
+
   {
     id: "wolt-127",
-    name: "Hörcsögtáp 700g",
-    slug: "horcsogtap-700g",
+    name: "Versele Laga Nature Cavia - tengerimalac",
+    slug: "versele-laga-nature-cavia",
     shopMode: "pet",
     category: "ragcsalok",
     price: null,
     imageUrl: "/images/products/wolt-127.webp",
     packageSize: "700g",
-    shortDescription: "Hörcsögtáp 700g – kisállateledel.",
+    shortDescription:
+      "Változatos, magas rosttartalmú eledel tengerimalacok számára.",
     description:
-      "Hörcsögtáp 700g: kisállatok etetéséhez kínált termék. A pontos összetételt és felhasználási javaslatot a csomagoláson találod.",
+      "Jellemzők: - Gabonamentes összetétel extra zöldésgekkel, vitaminokkal és ásványi anyagokkal - Változatos, magas rosttartalmú eledel, füvekkel, gyógynövényekkel és zöldségekkel - C-vitaminnal az ellenállóképességért és az optimális kondícióért Összetétel: Növényi származékok (mezei komócsin, füvek  és gyógynövények 21%), zöldésgek (cékla 5,5%, sárgaborsó 4%, zöldborsó 12%) gyümölcs (csipkebogyó 1%), magvak, ásványi anyagok, növényi fehérje kivonat, FOS, körömvirág, MOS, alga, jukka",
     isAvailable: false,
     isFeatured: false,
   },
@@ -1933,6 +1972,134 @@ export const products: Product[] = [
     shortDescription: "Trópus réti széna – réti széna.",
     description:
       "Trópus réti széna: kisállatok takarmányozásához kínált termék. A pontos összetételt és felhasználási javaslatot a csomagoláson találod.",
+    isAvailable: false,
+    isFeatured: false,
+  },
+  {
+    id: "wolt-132",
+    name: "VERSELE-LAGA Crispy Snack with Popcorn - popcornos falatok nyulak és rágcsálók számára",
+    slug: "versele-laga-crispy-snack-with-popcorn-popcornos-falatok-nyulak-es-ragcsalong-szamara",
+    shopMode: "pet",
+    category: "ragcsalok",
+    price: null,
+    imageUrl: "/images/products/wolt-132.webp",
+    packageSize: "550 g",
+    shortDescription:
+      "VERSELE-LAGA Crispy Snack with Popcorn egy ízletes falatka a kisállatok számára, amely szórakozást és változatosságot biztosít a nap folyamán.",
+    description:
+      "A könnyű és ropogós formula ösztönzi a rágást, támogatva a rágcsálók és nyulak természetes viselkedését. A keverék puffasztott gabonákat és aromás szentjánoskenyérfát tartalmaz, ugyanakkor nem tartalmaz hozzáadott cukrot, mesterséges színezékeket és aromákat. Főbb jellemzők: Falatka nyulak és rágcsálók számára, Könnyű, ropogós szerkezet, Popcornnal és gabonával dúsítva, Hozzáadott cukor nélkül, Természetes összetevők mesterséges adalékanyagok nélkül, Változatosságot és stimulációt biztosít, Összetevők Gabonák (puffasztott gabonák 18%) Növényi eredetű termékek Gyümölcsök (szentjánoskenyér 15%) Zöldségek (7%) Növényi fehérje kivonatok Ásványi anyagok Magvak Olajok és zsírok Algák, Fruktooligoszacharidok",
+    isAvailable: false,
+    isFeatured: false,
+  },
+  {
+    id: "wolt-133",
+    name: "Versele-Laga Crispy Snack with Fibres - snack-keverék nyulak és rágcsálók számára",
+    slug: "versele-laga-crispy-snack-with-fibres-snack-keverek-nyulak-es-ragcsalong-szamara",
+    shopMode: "pet",
+    category: "ragcsalok",
+    price: null,
+    imageUrl: "/images/products/wolt-133.jpg",
+    packageSize: "550 g",
+    shortDescription:
+      "Ízletes és ropogós snack-keverék, rostban gazdag, nyulak és rágcsálók számára.",
+    description:
+      "A Crispy Snack with Fibres egy ropogós finomság, amely kiegészíti kis kedvenced napi étrendjét. Egyszerűen ízletes, ropogós falat, amely kielégíti bundás barátod természetes rágcsálási ösztönét, változatosságot és örömet visz a napjába. - Ízekben, textúrákban és rostban gazdag snack-keverék. - Nem tartalmaz hozzáadott cukrot, mesterséges színezéket vagy ízesítőt. - Változatosabbá és gazdagabbá teszi az állatok életét a nap folyamán. Használati útmutató: A napi adag 25 %-áig etethető. Étkezési célra tartott állatok esetén nem használható.",
+    isAvailable: false,
+    isFeatured: false,
+  },
+  {
+    id: "wolt-135",
+    name: "Sandboxx ultra premium macskaalom - jázmin",
+    slug: "sandboxx-ultra-premium-macskaalom-jazmin",
+    shopMode: "pet",
+    category: "macska",
+    price: null,
+    imageUrl: "/images/products/wolt-135.webp",
+    packageSize: "10 l",
+    shortDescription:
+      "Porózus szerkezetének köszönhetően néhány másodperc alatt felszívja a folyadékot, így elkerüli a folyadék pangását, és ezzel megakadályozza a baktériumok elszaporodását. A kellemetlen szagok terjedését is hatékonyan megakadályozza.",
+    description:
+      "A Sandboxx macskaalom akár tömegének 400%-át képes magába foglalni. Használat: töltse fel 5-7 cm vastagságban az alomtálat Sandboxx alommal, majd a legjobb eredmény érdekében naponta távolítsa el a szennyezett csomókat. A megfelelő mennyiségű alom szintjének fenntartásához rendszeresen töltse újra az alomtálat.",
+    isAvailable: false,
+    isFeatured: false,
+  },
+  {
+    id: "wolt-136",
+    name: "Sandboxx ultra premium macskaalom - rozmaring",
+    slug: "sandboxx-ultra-premium-macskaalom-rozmaring",
+    shopMode: "pet",
+    category: "macska",
+    price: null,
+    imageUrl: "/images/products/wolt-136.webp",
+    packageSize: "10 l",
+    shortDescription:
+      "Porózus szerkezetének köszönhetően néhány másodperc alatt felszívja a folyadékot, így elkerüli a folyadék pangását, és ezzel megakadályozza a baktériumok elszaporodását. A kellemetlen szagok terjedését is hatékonyan megakadályozza.",
+    description:
+      "A Sandboxx macskaalom akár tömegének 400%-át képes magába foglalni. Használat: töltse fel 5-7 cm vastagságban az alomtálat Sandboxx alommal, majd a legjobb eredmény érdekében naponta távolítsa el a szennyezett csomókat. A megfelelő mennyiségű alom szintjének fenntartásához rendszeresen töltse újra az alomtálat.",
+    isAvailable: false,
+    isFeatured: false,
+  },
+  {
+    id: "wolt-137",
+    name: "Gimbi Széna",
+    slug: "gimbi-széna",
+    shopMode: "pet",
+    category: "ragcsalok",
+    price: null,
+    imageUrl: "/images/products/wolt-137.jpg",
+    packageSize: "30 l/1 kg",
+    shortDescription:
+      "A Gimbi Széna Természetes szénából álló, étkezési rostokat tartalmazó eledel kisállatok számára.",
+    description:
+      "A sok rostot tartalmazó Gimbi Széna kiváltja a rágási ingert, segíti a lenyelt szőrzet kiürülését és a fogazat természetes kopását. Felhasználási útmutató: Frissen adja a kedvencének és naponta cserélje. Mindig biztosítson friss ivóvizet! Összetétel: széna ,Analitikai összetevők: nyersrost 30%",
+    isAvailable: false,
+    isFeatured: false,
+  },
+  {
+    id: "wolt-138",
+    name: "VERSELE-LAGA Shell sand kristal box 2 kg - homok madaraknak",
+    slug: "versele-laga-shell-sand-kristal-box-2-kg-homok-madaraknak",
+    shopMode: "pet",
+    category: "madarak",
+    price: null,
+    imageUrl: "/images/products/wolt-138.webp",
+    packageSize: "2 kg",
+    shortDescription:
+      "Homok madarak számára, esszenciális ásványi anyagokkal, osztrigakagyló és tengeri kagyló kellemes ánizs illattal. Magas hőmérsékleten sterilizálva. Elengedhetetlen a ketrecben a jó higiénia fenntartásához. ,",
+    description:
+      "- Homok madarak számára, esszenciális ásványi anyagokkal, osztrigakagyló és tengeri kagyló kellemes ánizs illattal. Magas hőmérsékleten sterilizálva. Elengedhetetlen a ketrecben a jó higiénia fenntartásához.",
+    isAvailable: false,
+    isFeatured: false,
+  },
+  {
+    id: "wolt-139",
+    name: "Gimbi fa alapú alom",
+    slug: "gimbi-fa-alapu-alom",
+    shopMode: "pet",
+    category: "ragcsalok",
+    price: null,
+    imageUrl: "/images/products/wolt-139.jpg",
+    packageSize: "8 l",
+    shortDescription:
+      "Higiénikus alom, ami természetes, őrölt és préselt fa rostból készült kis hengerekből áll.",
+    description:
+      "- Törpenyulak, kisrágcsálók, mint a hörcsög, tengerimalac, egér, csincsilla, degu, futóegér tartásához ajánljuk. - Kiváló a nedvességmegkötő képessége, (több, mint a súlya 300 százaléka) és hosszú ideig szárazon tartja kedvencét. - Hosszan tartó szagmegkötő képességgel rendelkezik. - Nem ragad az állat bundájába. - Természetbarát, újrahasznosítható és biológiailag lebomló anyag. - 100 % -ban természetes. Használati utasítás: Töltse fel a ketrec alját 3 cm vastagságban az alommal, a preferált részeken pedig 5 cm vastagon! Az elkoszolódott alomdarabkákat naponta érdemes eltávolítani, tiszta alommal kárpótolni! Az elhasznált alom kiválóan alkalmas a komposztálásra, biológiailag lebomlik! Tárolás Száraz, jól szellőző helyen tárolandó! Figyelmeztetés: A csomagolás gyermekektől és állatoktól fulladásveszély miatt távol tartandó!",
+    isAvailable: false,
+    isFeatured: false,
+  },
+  {
+    id: "wolt-140",
+    name: "Gimbi széna kamillával",
+    slug: "gimbi-széna-kamillával",
+    shopMode: "pet",
+    category: "ragcsalok",
+    price: null,
+    imageUrl: "/images/products/wolt-140.webp",
+    packageSize: "500 gr",
+    shortDescription:
+      "A Gimborn Gimbi széna egy kamillával ízesített, nyers rostokban gazdag eledel rágcsálók számára.",
+    description:
+      "Jellemzők: - A nyers rostban gazdag széna, alapvető alkotóeleme a növényevő rágcsálók táplálásának.  - Segíti a fogazat természetes kopását, kiváltja a rágási ingert és hozzájárul a lenyelt szőrzet kiürüléséhez. - Gazdagabbá és változatosabbá teszi a napi étrendet, és hozzájárul a ketrec tisztábbá és barátságosabbá tételéhez. Összetétel:  Széna (90%), növényi eredetű melléktermékek (kamilla 10%)",
     isAvailable: false,
     isFeatured: false,
   },
@@ -2017,7 +2184,7 @@ export const products: Product[] = [
   },
   {
     id: "fish-005",
-    name: "AQUA Garant Classic 2.5mm",
+    name: "AQUA Garant Classic 2.5 mm",
     slug: "aqua-classic-pellet-etetoanyag",
     shopMode: "fishing",
     category: "pelletek",
