@@ -18,7 +18,7 @@ const categoryImages: Record<string, string> = {
   etetőanyagok: "/images/hero/etetokosar.webp",
   bojlik: "/images/hero/bojli.png",
   pelletek: "/images/hero/pellet.png",
-  aromák: "/images/hero/mucsali.webp",
+  aromák: "/images/hero/aromas.png",
   horgasztaskak: "/images/hero/tackles.webp",
   "horgasz-kiegeszitok": "/images/hero/tackles.webp",
 
