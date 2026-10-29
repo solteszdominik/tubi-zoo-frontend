@@ -10,12 +10,31 @@ type ProductPageProps = {
   }>;
 };
 
+function findProduct(slug: string) {
+  const product = products.find((item) => item.slug === slug);
+
+  if (product) {
+    return product;
+  }
+
+  // Tartalék keresés URL-kódolt slug esetére
+  try {
+    const decodedSlug = decodeURIComponent(slug);
+
+    return products.find((item) => item.slug === decodedSlug);
+  } catch {
+    return undefined;
+  }
+}
+
 export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
   const { slug } = await params;
 
-  const product = products.find((item) => item.slug === slug);
+  const product = findProduct(slug);
+
+  console.log("TALÁLT TERMÉK:", product?.name ?? "NINCS TALÁLAT");
 
   if (!product) {
     return {
@@ -44,7 +63,7 @@ export async function generateMetadata({
 export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = await params;
 
-  const product = products.find((item) => item.slug === slug);
+  const product = findProduct(slug);
 
   if (!product) {
     notFound();
